@@ -16,13 +16,14 @@ array should be: array([ 0.54030231, -0.63332387, -0.93171798,  0.05749049,  0.9
 def genSine(A, f, phi, fs, t):
     """
     Inputs:
-        A (float) =  amplitude of the sinusoid
+        A (float) = amplitude of the sinusoid
         f (float) = frequency of the sinusoid in Hz
         phi (float) = initial phase of the sinusoid in radians
         fs (float) = sampling frequency of the sinusoid in Hz
-        t (float) =  duration of the sinusoid (is second)
+        t (float) = duration of the sinusoid (is second)
     Output:
         The function should return a numpy array
         x (numpy array) = The generated sinusoid (use np.cos())
     """
-    ## Your code here
+    times = np.arange(0, t, 1 / fs)
+    return A*np.cos(2 * np.pi * f * times + phi)
